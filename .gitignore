@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models
+models/*
+!models/.gitkeep
+
+# Dataset/cache
+data/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+.mypy_cache
