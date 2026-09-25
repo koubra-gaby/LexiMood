@@ -1,21 +1,21 @@
 ## Dowloading et cleanning the dataset 
-from mlcroissant import Dataset
-import pandas as pd
 import re
 import unicodedata
+
 import emoji
-from nltk.corpus import stopwords
-import torch
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from datasets import Dataset
 import pandas as pd
+import torch
+from datasets import Dataset
+from mlcroissant import Dataset
+from nltk.corpus import stopwords
+from transformers import AutoModelForSeq2SeqLM,  AutoTokenizer
 
 
-def preprocessing (code) :
+def preprocessing (code_lang) :
     ## First, let's download our dataset
 
     ds = Dataset(jsonld="https://huggingface.co/api/datasets/shmuhammad/AfriSenti-twitter-sentiment/croissant")
-    records = ds.records(code)
+    records = ds.records(code_lang)
 
     #records_yoruba = ds.records("yor")
 
@@ -24,7 +24,7 @@ def preprocessing (code) :
     #df_yor = pd.DataFrame(records_yoruba) # for yoruba
 
     # Nettoyer le nom des colonnes pour enlever le préfixe "twi/"
-    df.columns = [col.replace(code, "") for col in df.columns]
+    df.columns = [col.replace(code_lang + "/", "") for col in df.columns]
     #df_yor.columns = [col.replace("yor/", "") for col in df_yor.columns]
 
 
