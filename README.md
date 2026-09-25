@@ -22,7 +22,7 @@ This repository implements and compares three different methodologies:
 ├── src/                            # Source code for reusable modular components
 │   ├── __init__.py
 │   ├── preprocessing.py            # Text cleaning and preprocessing pipelines for Nigerian Pidgin
-│   └── utils.py                    # Helper functions and evaluation metrics
+│   └── utils.py                   
 ├── .gitignore
 └── requirements.txt                # Project dependencies
 ```
